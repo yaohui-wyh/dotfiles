@@ -1,0 +1,11 @@
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+set showmode
+set history=100000
+nnoremap <Space>sc :nohlsearch<CR>
+nnoremap Y y$
+
+imap <C-n> <ESC>:action HippieCompletion<CR>a
+imap <C-p> <ESC>:action HippieBackwardCompletion<CR>a
