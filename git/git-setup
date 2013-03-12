@@ -1,0 +1,36 @@
+#!/bin/bash
+#===========================================================================
+# File: git-setup
+#
+# Ver 1.0, 2014-07-24 Wang Yaohui, Create file.
+#===========================================================================
+
+# Committer
+git config --global user.name "Wang Yaohui"
+git config --global user.email "wangyaohuicn@gmail.com"
+
+# Alias
+git config --global alias.st status
+git config --global alias.ci commit
+git config --global alias.co checkout
+git config --global alias.br branch
+git config --global alias.sh stash
+git config --global alias.pp 'pull --rebase'
+git config --global alias.ll 'log --graph --date=short --pretty=format:"\%x1b[31m\%h\%x09\%x1b[32m\%d\%x1b[0m\%x20\%ad\%x1b[33m\%x20\%an\%x1b[0m\%x20\%s"'
+
+# Set pager as less
+git config --global core.pager 'less -r'
+
+# Set editor and merge tool
+git config --global core.editor vim
+git config --global merge.tool meld
+
+# Set output color
+git config --global color.ui true
+
+# Global gitignore file
+echo '*.~' > ~/.gitignore
+echo '*.swp' >> ~/.gitignore
+echo '*.swa' >> ~/.gitignore
+echo '.DS_Store' >> ~/.gitignore
+git config --global core.excludesfile ~/.gitignore
