@@ -25,14 +25,9 @@ Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'ekalinin/dockerfile.vim', { 'for': 'dockerfile' }
 Plug 'mxw/vim-jsx'
-Plug 'easymotion/vim-easymotion'
 Plug 'fatih/vim-go'
-Plug 'jiangmiao/auto-pairs'
-Plug 'benmills/vimux'
-Plug 'w0rp/ale'
 Plug 'itchyny/lightline.vim'
 Plug 'mhinz/vim-startify'
-Plug '/usr/local/opt/fzf'
 call plug#end()
 filetype plugin indent on
 
@@ -146,14 +141,6 @@ vnoremap <C-k> "qy:vimgrep /<C-r>q/gj **<Left><left>
 " Using git grep to do cross-branch searching, use register j
 vmap <C-h> "jy:!for rev in $(git log --pretty="\%h"); do git grep <C-r>j $rev; done<CR>
 
-" popen / pclose
-map <Leader>;p :popen<CR>
-map <Leader>'p :pclose<CR>
-
-" copen / cclose
-map <Leader>;c :copen<CR>
-map <Leader>'c :cclose<CR>
-
 " Git command
 map <Leader>gg :!git log --graph --date=short --pretty=format:"\%x1b[31m\%h\%x09\%x1b[32m\%d\%x1b[0m\%x20\%ad\%x1b[33m\%x20\%an\%x1b[0m\%x20\%s"<CR>
 map <Leader>gl :!git log --stat --abbrev-commit --pretty=short --graph<CR>
@@ -179,7 +166,7 @@ noremap <Leader>hh :GundoToggle<CR>
 " <c-t>: open in a new tab
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_custom_ignore = '\v[\/](node_modules|dist)|(\.(git|hg|svn))$'
+let g:ctrlp_custom_ignore = '\v[\/](node_modules|dist)|(\.(git|hg|svn|idea))$'
 
 " Zen-coding
 let g:user_emmet_install_global = 0
