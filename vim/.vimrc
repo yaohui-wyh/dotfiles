@@ -22,6 +22,7 @@ Plug 'altercation/vim-colors-solarized', { 'on': 'colorscheme solarized' }
 Plug 'udalov/kotlin-vim', { 'for': 'kotlin' }
 Plug 'kchmck/vim-coffee-script'
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
+Plug 'peitalin/vim-jsx-typescript', { 'for': 'typescript' }
 Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'ekalinin/dockerfile.vim', { 'for': 'dockerfile' }
 Plug 'mxw/vim-jsx'
