@@ -155,6 +155,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
 alias cat='bat'
+alias dig='dog'
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 alias rgf='rg --files | rg'
@@ -165,6 +166,8 @@ alias preview='open -a Preview'
 
 # Go Proxy
 export GOPROXY=https://goproxy.io,direct
+
+autoload -U compinit; compinit
 
 # THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="~/.sdkman"

@@ -8,7 +8,6 @@ ln -sf `pwd`/.zshrc ~/.zshrc
 ln -sf `pwd`/.bash_profile ~/.bash_profile
 ```
 
-
 ### Git
 
 `./git-setup`
@@ -28,6 +27,7 @@ Refs:
 
 ```
 # OSX: brew install hammerspoon --cask
+mkdir -p ~/.hammerspoon
 ln -sf `pwd`/init.lua ~/.hammerspoon/init.lua
 ```
 
@@ -35,17 +35,16 @@ Refs:
 
 - <https://github.com/fikovnik/ShiftIt/wiki/The-Hammerspoon-Alternative>
 
-
 ### SSH
 
-`ssh-config-init.sh`
+`ssh-config-init.sh` 按需修改
 
 ```
+cd ~/.ssh
 mkdir sockets
 
 cat >> ~/.ssh/config << 'EOF'
 # SSH 连接保持及重用
-# 第一次登陆后不关闭终端窗口（Session），新建 SSH 连接时不需输入密码
 Host *
 ControlMaster auto
 ControlPath ~/.ssh/sockets/master-%r%@h:%p
@@ -60,7 +59,6 @@ UserKnownHostsFile /dev/null
 StrictHostKeyChecking no
 EOF
 ```
-
 
 ### Procs
 
