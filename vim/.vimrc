@@ -74,7 +74,7 @@ hi CursorLine term=bold cterm=bold guibg=Grey40
 set wildmode=longest,list,full " Tab completion for filenames
 set wildmenu
 
-set scrolloff=4 " Keep 4 lines off the edges of the screen when scrolling
+set scrolloff=2 " Keep 2 lines off the edges of the screen when scrolling
 
 "----------------------------------------------
 " Search
