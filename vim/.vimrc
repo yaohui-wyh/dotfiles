@@ -104,6 +104,11 @@ if has('statusline')
     set statusline+=%=%-14.(%l,%c%V%)\ %p%% " Right aligned file nav info
 endif
 
+" Git
+nmap gbl :Git blame<CR>
+nmap gcl :Gclog! --graph --pretty=format:'%h - (%ad)%d %s <%an>' --abbrev-commit --date=local -- %<CR>
+
+
 " Tab stuff
 set shiftwidth=4 tabstop=4 softtabstop=4 expandtab
 set autoindent
