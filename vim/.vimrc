@@ -11,6 +11,7 @@ Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'vim-scripts/matrix.vim--Yang', { 'on': 'Matrix' }
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+Plug 'junegunn/gv.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'octref/RootIgnore'
@@ -105,8 +106,8 @@ if has('statusline')
 endif
 
 " Git
-nmap gbl :Git blame<CR>
-nmap gcl :Gclog! --graph --pretty=format:'%h - (%ad)%d %s <%an>' --abbrev-commit --date=local -- %<CR>
+nmap gbl :Git blame<CR><C-w>w
+nmap gcl :Gclog! --graph --pretty=format:'%h - (%ad)%d %s <%an>' --abbrev-commit --date=short -- %<CR>
 
 
 " Tab stuff
@@ -161,6 +162,12 @@ function! s:find_git_root()
 endfunction
 command! ProjectFiles execute 'Files' s:find_git_root()
 nmap <C-p> : ProjectFiles<CR>
+
+" Rg search scope set as ProjectRoot
+command! -bang -nargs=* PRg
+  \ call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1,
+  \ {'dir': system('git -C '.expand('%:p:h').' rev-parse --show-toplevel 2> /dev/null')[:-2]}, <bang>0)
+nmap <Leader>pp :PRg<CR>
 
 
 autocmd BufNewFile,BufRead *.ejs set filetype=html

@@ -169,6 +169,11 @@ export GOPROXY=https://goproxy.io,direct
 
 autoload -U compinit; compinit
 
+# install fzf shell extensions, key binding: c-r, c-t, alt-c
+# /usr/local/opt/fzf/install
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+bindkey "ç" fzf-cd-widget
+
 # THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
