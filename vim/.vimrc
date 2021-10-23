@@ -4,8 +4,8 @@ call plug#begin('~/.vim/plugged')
 " NERD tree will be loaded on the first invocation of NERDTreeToggle command
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
-Plug 'majutsushi/tagbar'
-" brew install --HEAD universal-ctags/universal-ctags/universal-ctags
+Plug 'preservim/tagbar'
+" universal-ctags, ctags --version
 Plug 'vim-scripts/cscope_macros.vim'
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'vim-scripts/matrix.vim--Yang', { 'on': 'Matrix' }
