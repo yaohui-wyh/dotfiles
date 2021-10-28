@@ -183,16 +183,14 @@ let g:vim_markdown_folding_disabled = 1
 
 
 " Tagbar
-map <F4> :TagbarToggle<CR>
-imap <F4> <ESC>:TagbarToggle<CR>
+nmap <F4> :TagbarToggle<CR>
 
 let g:tagbar_width = 30     " width of Tagbar window
 
 
 " NerdTree
 let NERDTreeIgnore=['cscope.in.out','cscope.out','cscope.files','cscope.po.out','tags','\.swp$','\.pyc','\~$','\.git','\.svn','\.idea','node_modules']
-map <F3> :NERDTreeToggle<CR>
-imap <F3> <ESC> :NERDTreeToggle<CR>
+nmap <F3> :NERDTreeToggle<CR>
 
 " open a NERDTree automatically when vim starts up if no files were specified or opening a directory
 autocmd StdinReadPre * let s:std_in=1
@@ -214,22 +212,14 @@ autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 " Tab switching
 if system("uname -s") == "Darwin\n"
     nmap <Leader><Right> :tabn<CR>
-    imap <Leader><Right> <ESC>:tabn<CR>
     nmap <Leader><Left> :tabp<CR>
-    imap <Leader><Left> <ESC>:tabp<CR>
     nmap <Leader><Down> :tabc<CR>
-    imap <Leader><Down> <ESC>:tabc<CR>
     nmap <Leader><Up> :tabe<CR>
-    imap <Leader><Up> <ESC>:tabe<CR>
 else
     nmap <C-Right> :tabn<CR>
-    imap <C-Right> <ESC>:tabn<CR>
     nmap <C-Left> :tabp<CR>
-    imap <C-Left> <ESC>:tabp<CR>
     nmap <C-Down> :tabc<CR>
-    imap <C-Down> <ESC>:tabc<CR>
     nmap <C-Up> :tabe<CR>
-    imap <C-Up> <ESC>:tabe<CR>
 endif
 
 
