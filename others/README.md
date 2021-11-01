@@ -78,3 +78,21 @@ ln -sf `pwd`/.my.cnf ~/.my.cnf
 # pip install -U mycli
 # sudo apt-get install mycli # Only on debian or ubuntu
 ```
+
+### Chrome Extensions
+
+- OneTab
+- JSON Formatter
+- Postman Interceptor
+- React Developer Tools
+- Vimium
+    - Custom key mappings:
+
+    ```
+    map z restoreTab
+    map J scrollFullPageDown
+    map K scrollFullPageUp
+    umap p
+    umap P
+    ```
+    - Scroll step size: 80px
