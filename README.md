@@ -7,6 +7,8 @@
 - 文件检索越来越高频 (`fzf`，包括 fzf-vim 提供的很多模糊搜索的集成能力、如 `Rg` / `GFiles?` 命令)
 - 依赖 Window Manager + Alfred 更好快速做焦点的切换和全键盘操作 (`Hammerspoon`)
 
+<https://wyh.life/article/2021/09/06/vim-2021>
+
 ----
 
 ### VIM 配置 [2014]
