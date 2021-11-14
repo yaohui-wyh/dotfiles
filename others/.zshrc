@@ -72,6 +72,8 @@ plugins=(
     git
     zsh-autosuggestions
     zsh-syntax-highlighting
+    autojump
+    kubectl
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -129,7 +131,6 @@ alias l='ls -CF'
 alias sl='ls'
 
 alias t='tmux'
-alias k='kubectl'
 
 # Download best format available but not better that 480p
 alias pp3='youtube-dl --proxy socks5://127.0.0.1:1080/ -f "bestvideo[height<=480]+bestaudio/best[height<=480]"'
@@ -166,15 +167,20 @@ alias rgi='rg --no-ignore --hidden '
 export FZF_DEFAULT_COMMAND='rg --files'
 alias preview='open -a Preview'
 
-# Go Proxy
-export GOPROXY=https://goproxy.io,direct
-
-autoload -U compinit; compinit
-
 # install fzf shell extensions, key binding: c-r, c-t, alt-c
 # /usr/local/opt/fzf/install
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 bindkey "ç" fzf-cd-widget
+
+# Go Proxy
+export GOPROXY=https://goproxy.io,direct
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+autoload -U compinit; compinit
+
+source <(kubectl completion zsh)
+alias k=kubectl
+complete -F __start_kubectl k
 
 # THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
