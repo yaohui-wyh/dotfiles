@@ -1,3 +1,4 @@
+-- script for Hammerspoon
 hs.window.animationDuration = 0
 units = {
     right50       = { x = 0.70, y = 0.00, w = 0.50, h = 1.00 },

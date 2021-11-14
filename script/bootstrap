@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# personalize github codespaces
+# https://github.com/settings/codespaces
+# https://docs.github.com/en/codespaces/customizing-your-codespace/personalizing-codespaces-for-your-account#dotfiles
+
+./git-setup
