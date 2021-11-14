@@ -29,6 +29,15 @@
 	"remoteUser": "vscode",
 	"features": {
 		"github-cli": "latest",
-		"homebrew": "latest"
-	}
+		"docker": "latest",
+		"homebrew": "latest",
+		"kubectl-helm-minikube": "latest",
+		"git": "latest",
+		"sshd": "latest",
+		"node": "16",
+		"python": "3.10",
+		"golang": "latest",
+		"java": "17-open"
+	},
+	"postCreateCommand": "./.devcontainer/postCreateCommand.sh",
 }

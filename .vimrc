@@ -16,7 +16,6 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'octref/RootIgnore'
 Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
-Plug 'altercation/vim-colors-solarized', { 'on': 'colorscheme solarized' }
 Plug 'udalov/kotlin-vim', { 'for': 'kotlin' }
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
@@ -65,7 +64,6 @@ set term=xterm-256color
 set t_ut=       " Fixing Vim's Background Color
 set background=dark
 let g:solarized_termcolors=256
-" colorscheme solarized
 colorscheme desert
 
 set showcmd
@@ -230,7 +228,8 @@ function! Clean()
     exec '%s/\s\+$//e'
 
     " use silent! to omit error message, type in ^M by Ctrl+v and Ctrl+m
-    exec 'silent! %s/$//g'
+    exec 'silent! %s/
+$//g'
 endfunction
 nmap cls :call Clean()<CR>
 " au FileType c,java,javascript,python,xml,html,yml,mkd autocmd VimEnter * call Clean()
