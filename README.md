@@ -1,6 +1,6 @@
 > Some of the document could be outdated
 
-[**Update 2021**] 目录结构参考 GitHub Codespaces 的 [dotfiles 约定](https://docs.github.com/en/codespaces/customizing-your-codespace/personalizing-codespaces-for-your-account#dotfiles)调整
+[**Update 2021**] 目录结构参考 GitHub Codespaces 的 [dotfiles 约定](https://docs.github.com/en/codespaces/customizing-your-codespace/personalizing-codespaces-for-your-account#dotfiles) 调整
 
 ----
 
