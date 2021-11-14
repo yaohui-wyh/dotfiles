@@ -3,14 +3,14 @@
 # personalize github codespaces
 # https://github.com/settings/codespaces
 # https://docs.github.com/en/codespaces/customizing-your-codespace/personalizing-codespaces-for-your-account#dotfiles
+#
+# devcontainer: /workspaces/.codespaces/.persistedshare/dotfiles
 
 # Git
 ./git-setup.sh
 
-# Symlink dotfiles
-cd ..
-ln -sf `pwd`/.vimrc ~/.vimrc
-ln -sf `pwd`/.ideavimrc ~/.ideavimrc
-ln -sf `pwd`/.zshrc ~/.zshrc
-ln -sf `pwd`/.tmux.conf ~/.tmux.conf
-ln -sf `pwd`/.procs.toml ~/.procs.toml
+# Copy dotfiles
+cp ../.vimrc ~/.vimrc
+cp ../.zshrc ~/.zshrc
+cp ../.tmux.conf ~/.tmux.conf
+cp ../.procs.toml ~/.procs.toml
