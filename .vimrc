@@ -228,8 +228,7 @@ function! Clean()
     exec '%s/\s\+$//e'
 
     " use silent! to omit error message, type in ^M by Ctrl+v and Ctrl+m
-    exec 'silent! %s/
-$//g'
+    exec 'silent! %s/$//g'
 endfunction
 nmap cls :call Clean()<CR>
 " au FileType c,java,javascript,python,xml,html,yml,mkd autocmd VimEnter * call Clean()
