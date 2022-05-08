@@ -109,8 +109,8 @@ source $ZSH/oh-my-zsh.sh
 HISTCONTROL=ignoreboth
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=20000000
-HISTFILESIZE=1000000
+HISTSIZE=2000000000
+HISTFILESIZE=100000000
 
 # set command timestamp
 HISTTIMEFORMAT="[%Y-%m-%d %H:%M:%S] "

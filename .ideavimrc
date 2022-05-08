@@ -3,9 +3,16 @@ set incsearch
 set ignorecase
 set smartcase
 set showmode
-set history=100000
+set history=10000000
 nnoremap <Space>sc :nohlsearch<CR>
 nnoremap Y y$
+
+" disable bell sound
+set visualbell
+set noerrorbells
+
+noremap <Space>sc :nohlsearch<CR>
+noremap Y y$
 
 imap <C-n> <ESC>:action HippieCompletion<CR>a
 imap <C-p> <ESC>:action HippieBackwardCompletion<CR>a
