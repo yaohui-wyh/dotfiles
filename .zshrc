@@ -140,7 +140,8 @@ alias pip-upgrade="sudo pip3 freeze --local | grep -v '^\-e' | cut -d = -f 1  | 
 
 # Android SDK
 export ANDROID_HOME=~/workspace/android-sdk-macosx
-export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:/usr/local/sbin:${HOME}/.gem/ruby/2.6.0/bin
+export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:/usr/local/sbin:/usr/local/opt/ruby/bin
+export GEM_HOME="$HOME/.gem"
 
 # brew install gnu-sed findutils
 if [ -z "$gsed" ]; then
@@ -165,7 +166,6 @@ alias rgf='rg --files | rg'
 alias rgi='rg --no-ignore --hidden '
 # fzf (w/o pipe) will use rg instead of find, thus respect .gitignore
 export FZF_DEFAULT_COMMAND='rg --files'
-alias preview='open -a Preview'
 
 # install fzf shell extensions, key binding: c-r, c-t, alt-c
 # /usr/local/opt/fzf/install

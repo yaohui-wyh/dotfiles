@@ -55,6 +55,7 @@ set fileformats=unix,dos
 set ambiwidth=double
 set number
 set autoread    "Read file when changed outside
+set shortmess-=S
 
 set mouse=a
 set mousehide " Hide the mouse cursor while typing
