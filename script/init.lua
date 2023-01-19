@@ -129,22 +129,3 @@ end
 
 hs.hotkey.bind(hyper, 'Down', changeVolume(-3))
 hs.hotkey.bind(hyper, 'Up', changeVolume(3))
-
-
-local key2App = {
-    c = 'Google Chrome',
-    f = 'Finder',
-    t = 'iTerm',
-    n = 'Notion'
-}
-for key, app in pairs(key2App) do
-    hs.hotkey.bind(hyper, key, function() hs.application.launchOrFocus(app) end)
-end
-
-hs.hotkey.bind(mash, '/', function() hs.hints.windowHints() end)
-
--- show hints for application switches
-hs.hotkey.bind(mash, 'h', function()
-    hs.alert.closeAll()
-    hs.alert('⌃⌥⌘⇧+C\t\t\tGoogle Chrome\n⌃⌥⌘⇧+F\t\t\tFinder\n⌃⌥⌘⇧+T\t\t\tiTerm\n⌃⌥⌘⇧+N\t\t\tNotion', {}, 5)
-end)

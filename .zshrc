@@ -132,16 +132,9 @@ alias sl='ls'
 
 alias t='tmux'
 
-# Download best format available but not better that 480p
-alias pp3='youtube-dl --proxy socks5://127.0.0.1:1080/ -f "bestvideo[height<=480]+bestaudio/best[height<=480]"'
 alias hp='export all_proxy=socks5://127.0.0.1:1080/'
 alias uhp='export all_proxy='
 alias pip-upgrade="sudo pip3 freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 sudo -H pip3 install -U"
-
-# Android SDK
-export ANDROID_HOME=~/workspace/android-sdk-macosx
-export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:/usr/local/sbin:/usr/local/opt/ruby/bin
-export GEM_HOME="$HOME/.gem"
 
 # brew install gnu-sed findutils
 if [ -z "$gsed" ]; then

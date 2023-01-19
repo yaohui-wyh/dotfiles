@@ -71,8 +71,9 @@ set showcmd
 set cursorline
 hi CursorLine term=bold cterm=bold guibg=Grey40
 
+set path+=** " Find file recursively `:find xxx` tab to select
 set wildmode=longest,list,full " Tab completion for filenames
-set wildmenu
+set wildmenu " Show matched filename tab
 
 set scrolloff=2 " Keep 2 lines off the edges of the screen when scrolling
 

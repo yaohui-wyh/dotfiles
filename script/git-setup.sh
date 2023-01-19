@@ -1,7 +1,3 @@
-# Committer
-# git config --global user.name "Wang Yaohui"
-# git config --global user.email "wangyaohuicn@gmail.com"
-
 # Alias
 git config --global alias.st status
 git config --global alias.ci commit
