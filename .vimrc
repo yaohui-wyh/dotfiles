@@ -26,6 +26,7 @@ Plug 'mxw/vim-jsx'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'itchyny/lightline.vim'
 Plug 'mhinz/vim-startify'
+Plug 'solarnz/thrift.vim', { 'for': 'thrift' }
 call plug#end()
 filetype plugin indent on
 
@@ -246,6 +247,14 @@ function! AddColorColumn()
     highlight ColorColumn ctermbg=green guibg=orange
 endfunction
 nmap clm :call AddColorColumn()<CR>
+
+
+"----------------------------------------------
+augroup remember_folds
+  autocmd!
+  autocmd BufWinLeave * mkview
+  autocmd BufWinEnter * silent! loadview
+augroup END
 
 
 "----------------------------------------------
