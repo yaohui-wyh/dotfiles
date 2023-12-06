@@ -1,4 +1,3 @@
--- script for Hammerspoon
 hs.window.animationDuration = 0
 units = {
     right50       = { x = 0.50, y = 0.00, w = 0.50, h = 1.00 },
@@ -22,6 +21,18 @@ hs.hotkey.bind(mash, '1', function() hs.window.focusedWindow():move(units.leftUp
 hs.hotkey.bind(mash, '2', function() hs.window.focusedWindow():move(units.leftBottom,      nil, true) end)
 hs.hotkey.bind(mash, '3', function() hs.window.focusedWindow():move(units.rightUp,      nil, true) end)
 hs.hotkey.bind(mash, '4', function() hs.window.focusedWindow():move(units.rightBottom,      nil, true) end)
+
+-- Launch or focus Lark with ⌘ + ⌥ + ^ + <key>
+appsShortcuts = {
+    {"l", "Lark"},
+    {"/", "Google Chrome"},
+    {"t", "iTerm"},
+}
+for i,shortcut in ipairs(appsShortcuts) do
+    hs.hotkey.bind(mash, shortcut[1], function()
+        hs.application.launchOrFocus(shortcut[2])
+    end)
+end
 
 -- move window to next monitor
 hs.hotkey.bind(mash, 'n', function()
@@ -129,3 +140,9 @@ end
 
 hs.hotkey.bind(hyper, 'Down', changeVolume(-3))
 hs.hotkey.bind(hyper, 'Up', changeVolume(3))
+
+--- DarkMode Toggle
+--- https://github.com/AlejandroRoman/DarkModeToggle
+hs.loadSpoon("DarkModeToggle")
+-- Toggle Dark Mode with ⌘ + ⌥ + ^ + D
+spoon.DarkModeToggle:bindHotkeys({toggle = {mash, "d"}})
