@@ -146,3 +146,11 @@ hs.hotkey.bind(hyper, 'Up', changeVolume(3))
 hs.loadSpoon("DarkModeToggle")
 -- Toggle Dark Mode with ⌘ + ⌥ + ^ + D
 spoon.DarkModeToggle:bindHotkeys({toggle = {mash, "d"}})
+
+
+--- TextClipboardHistory
+hs.loadSpoon("TextClipboardHistory")
+-- Show TextClipboardHistory with ⌘ + ⌥ + ^ + C
+spoon.TextClipboardHistory.show_in_menubar = false
+spoon.TextClipboardHistory:bindHotkeys({show_clipboard = {mash, "c"}})
+spoon.TextClipboardHistory:start()
