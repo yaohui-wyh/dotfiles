@@ -4,7 +4,7 @@
 # Brew formula
 brew install \
    vim tmux autojump tree jq pstree htop fzf watch \
-   bat cloc axel diff-so-fancy tldr dog ripgrep universal-ctags httpie netcat gnu-sed
+   bat cloc axel diff-so-fancy dog ripgrep httpie netcat gnu-sed
 
 # Install vim-plug & plugins
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim

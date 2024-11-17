@@ -10,12 +10,6 @@
 		"args": { "VARIANT": "bullseye" }
 	},
 
-	// Set *default* container specific settings.json values on container create.
-	"settings": {},
-
-	// Add the IDs of extensions you want installed when the container is created.
-	"extensions": [],
-
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
 
@@ -29,8 +23,6 @@
 	"remoteUser": "vscode",
 	"features": {
 		"github-cli": "latest",
-		"homebrew": "latest",
-		"kubectl-helm-minikube": "latest",
 		"git": "latest",
 		"sshd": "latest",
 		"node": "16",
@@ -38,5 +30,5 @@
 		"golang": "latest",
 		"java": "17-open"
 	},
-	"postCreateCommand": "./.devcontainer/postCreateCommand.sh",
+	"postCreateCommand": "./.devcontainer/postCreateCommand.sh"
 }
