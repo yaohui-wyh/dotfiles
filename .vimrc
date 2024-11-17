@@ -14,7 +14,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/gv.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'octref/RootIgnore'
 Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
 Plug 'udalov/kotlin-vim', { 'for': 'kotlin' }
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
@@ -190,8 +189,9 @@ let g:tagbar_width = 30     " width of Tagbar window
 
 
 " NerdTree
-let NERDTreeIgnore=['cscope.in.out','cscope.out','cscope.files','cscope.po.out','tags','\.swp$','\.pyc','\~$','\.git','\.svn','\.idea','node_modules']
-nmap <F3> :NERDTreeToggle<CR>
+let NERDTreeIgnore=['\.swp$','\.pyc','\~$','\.git','\.svn','\.idea','node_modules']
+" F3 to open NERDTree also focus on current file
+nmap <Leader>f :NERDTreeFind<CR>:wincmd p<CR>
 
 " open a NERDTree automatically when vim starts up if no files were specified or opening a directory
 autocmd StdinReadPre * let s:std_in=1
@@ -229,9 +229,6 @@ endif
 function! Clean()
     exec 'retab'
     exec '%s/\s\+$//e'
-
-    " use silent! to omit error message, type in ^M by Ctrl+v and Ctrl+m
-    exec 'silent! %s/$//g'
 endfunction
 nmap cls :call Clean()<CR>
 " au FileType c,java,javascript,python,xml,html,yml,mkd autocmd VimEnter * call Clean()
@@ -256,6 +253,9 @@ augroup remember_folds
   autocmd BufWinEnter * silent! loadview
 augroup END
 
+" Map zM to set foldmethod=syntax
+nnoremap zM :set foldmethod=syntax<CR>zM
+nnoremap zR :normal! zR<CR>
 
 "----------------------------------------------
 " Simple Template
