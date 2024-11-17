@@ -73,7 +73,6 @@ plugins=(
     zsh-autosuggestions
     zsh-syntax-highlighting
     autojump
-    kubectl
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -185,10 +184,6 @@ export GOPROXY=https://goproxy.io,direct
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 autoload -U compinit; compinit
-
-source <(kubectl completion zsh)
-alias k=kubectl
-complete -F __start_kubectl k
 
 # THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
