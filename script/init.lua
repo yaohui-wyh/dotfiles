@@ -36,13 +36,36 @@ end
 
 -- move window to next monitor
 hs.hotkey.bind(mash, 'n', function()
- -- get the focused window
-  local win = hs.window.focusedWindow()
-  -- get the screen where the focused window is displayed, a.k.a. current screen
-  local screen = win:screen()
-  -- compute the unitRect of the focused window relative to the current screen
-  -- and move the window to the next screen setting the same unitRect
-  win:move(win:frame():toUnitRect(screen:frame()), screen:next(), true, 0)
+    -- get the focused window
+    local win = hs.window.focusedWindow()
+    if not win then return end
+
+    -- get all screens
+    local allScreens = hs.screen.allScreens()
+    if #allScreens <= 1 then return end
+
+    -- find current screen index
+    local currentScreen = win:screen()
+    local currentScreenIndex = 0
+
+    for i, screen in ipairs(allScreens) do
+        if screen:id() == currentScreen:id() then
+            currentScreenIndex = i
+            break
+        end
+    end
+
+    -- determine next screen index (with wraparound)
+    local nextScreenIndex = (currentScreenIndex + 1) % #allScreens
+    if nextScreenIndex == 0 then nextScreenIndex = #allScreens end
+    local nextScreen = allScreens[nextScreenIndex]
+
+    -- get the window's current frame and the screen frames
+    local winFrame = win:frame()
+    local currentScreenFrame = currentScreen:frame()
+    local nextScreenFrame = nextScreen:frame()
+
+    win:moveToScreen(nextScreen, true, true, 0)
 end)
 
 -- maximum / center
