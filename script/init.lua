@@ -60,11 +60,6 @@ hs.hotkey.bind(mash, 'n', function()
     if nextScreenIndex == 0 then nextScreenIndex = #allScreens end
     local nextScreen = allScreens[nextScreenIndex]
 
-    -- get the window's current frame and the screen frames
-    local winFrame = win:frame()
-    local currentScreenFrame = currentScreen:frame()
-    local nextScreenFrame = nextScreen:frame()
-
     win:moveToScreen(nextScreen, true, true, 0)
 end)
 
